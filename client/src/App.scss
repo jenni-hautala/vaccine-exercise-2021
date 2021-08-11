@@ -37,6 +37,21 @@ body {
 			width: 1170px;
 		}
 	}
+	.row {
+		display: flex;
+		margin: 30px;
+		justify-content: space-around;
+		@media (max-width: 992px) {
+			flex-direction: column;
+			margin: 30px auto;
+		}
+	}
+	.col {
+		margin: auto;
+		max-width: 100%;
+		padding: 30px;
+		border: 1px solid $primary;
+	}
 	// Typography
 	h1 {
 		font-size: 42px;
@@ -64,6 +79,11 @@ body {
 	}
 	p {
 		margin: 0 0 10px;
+	}
+	.text-lg {
+		font-size: large;
+		font-weight: 600;
+		color: $primary;
 	}
 	// Other elements
 	.centered-box {

@@ -6,10 +6,10 @@ function ExpiringVaccines() {
 	return(
 	<div className="ExpiringVaccines container">
 		<h2>Expiring vaccines</h2>
-		<div className="ExpiringVaccines__Row">
-			<div className="ExpiringVaccines__Timeline">
+		<div className="ExpiringVaccines row">
+			<div className="ExpiringVaccines__Timeline col">
 			</div>
-			<div className="ExpiringVaccines__Info">
+			<div className="ExpiringVaccines__Info col">
 			</div>
 		</div>
 	</div>

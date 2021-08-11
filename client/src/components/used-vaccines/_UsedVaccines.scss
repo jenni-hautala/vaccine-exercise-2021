@@ -1,0 +1,13 @@
+.UsedVaccines {
+	&__Info {
+		@media (min-width: 992px) {
+			width: 40%;
+		}
+	}
+	&__Bar {
+		height: 180px;
+		@media (min-width: 992px) {
+			width: 20%;
+		}
+	}
+}
