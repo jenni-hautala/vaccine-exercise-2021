@@ -1,0 +1,49 @@
+.Orders {
+	&__All {
+		margin: 45px 0;
+		>.Orders__BlockNumber {
+			width: 196px;
+			height: 196px;
+			font-size: 66px;
+		}
+	}
+	&__Row {
+		display: flex;
+		justify-content: center;
+		@media (max-width: 992px) {
+			flex-direction: column;
+		}
+	}
+	&__Block {
+		position: relative;
+		min-height: 1px;
+		width: 100%;
+		margin: 15px 0;
+	}
+	&__BlockNumber {
+		width: 154px;
+		height: 154px;
+		position: relative;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		color: $primary;
+		font-weight: 600;
+		font-size: 52px;
+		font-family: sans-serif;
+		margin: auto;
+		&::after {
+			content: "";
+			position: absolute;
+			width: 87%;
+			height: 87%;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+		}
+	}
+	&__BlockNumber, &__BlockNumber::after {
+		border-radius: 50%;
+		border: solid 1px $primary;
+	}
+}
