@@ -36,12 +36,12 @@ function UsedVaccines({ date }) {
 				{usedP > 0 ? <div className="UsedVaccines__Bar__Used" style={{height: `${usedP}%`}}>{usedP}% Used</div>: null}
 				{unUsedP > 0 ? <div className="UsedVaccines__Bar__Unused" style={{height: `${unUsedP}%`}}>{unUsedP}% Unused</div>: null}
 			</div>
-			<div className="UsedVaccines__Info col text-left">
+			<div className="UsedVaccines__Info col text-lg-left">
 			There are <span className="text-highlight">{vaccinations.length}</span> orders for vaccinations all together. <span className="text-highlight">{used}</span> of them have already been used and <span className="text-highlight">{unUsed}</span> will be used in the future.
 			</div>
 		</div>
 		<div className="UsedVaccines row">
-			<div className="UsedVaccines__Info col text-right">
+			<div className="UsedVaccines__Info col text-lg-right order-mobile-second">
 			<span className="text-highlight">{nonbinary}</span> of the vaccinatees were nonbinary, whereas <span className="text-highlight">{female}</span> of them described themselves as female. Rest <span className="text-highlight">{male}</span> of them were male.
 			</div>
 			<div className="UsedVaccines__Bar col">
