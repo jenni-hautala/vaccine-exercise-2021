@@ -1,6 +1,8 @@
 import * as api from '../api';
 
-// Action Creators
+/**
+ * Action creators for vaccinations
+ */
 export const getVaccinations = () => async (dispatch) => {
 	try {
 		const { data } = await api.fetchVaccinations();

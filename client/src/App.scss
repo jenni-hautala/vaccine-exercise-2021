@@ -94,6 +94,12 @@ body {
 			font-size: xx-large;
 		}
 	}
+	.text-left {
+		text-align: left;
+	}
+	.text-right {
+		text-align: right;
+	}
 	// Other elements
 	.centered-box {
 		display: flex;

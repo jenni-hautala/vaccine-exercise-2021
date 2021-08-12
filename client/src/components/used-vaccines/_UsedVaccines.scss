@@ -2,7 +2,6 @@
 	&__Info {
 		font-size: large;
 		@media (min-width: 992px) {
-			text-align: left;
 			font-size: x-large;
 			width: 50%;
 		}
@@ -27,6 +26,15 @@
 			background-color: #33BDF6;
 		}
 		&__Unused {
+			background-color: #F9AD83;
+		}
+		&__Nonbinary {
+			background-color: #b082fb;
+		}
+		&__Female {
+			background-color: #33BDF6;
+		}
+		&__Male {
 			background-color: #F9AD83;
 		}
 	}

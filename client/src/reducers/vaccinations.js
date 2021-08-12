@@ -1,3 +1,7 @@
+/**
+ * Reducers for vaccinations and vaccinates
+ */
+
 const reducer = (vaccinations = [], action) => {
 	switch (action.type) {
 		case 'FETCH_ALL':
