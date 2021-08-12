@@ -7,9 +7,9 @@ function UsedVaccines() {
 	console.log(today)
 	const filterByExpiration = arr => arr.filter(({ vaccinationDate }) => new Date(vaccinationDate) > today);
 	const used = (filterByExpiration(vaccinations)).length;
-	// const usedP = used / vaccinations.length * 100;
+	const usedP = Math.floor(used / vaccinations.length * 100);
 	const unUsed = vaccinations.length - used;
-	// const unUsedP = unUsed / vaccinations.length * 100;
+	const unUsedP = 100 - usedP;
 
 	// Functions
 
@@ -21,11 +21,11 @@ function UsedVaccines() {
 		<h2>Vaccines used and to be used</h2>
 		<div className="UsedVaccines row">
 			<div className="UsedVaccines__Bar col">
-				<div className="UsedVaccines__Bar__Used">{Math.floor(used / vaccinations.length * 100)}% Used</div>
-				<div className="UsedVaccines__Bar__Unused">{Math.floor(unUsed / vaccinations.length * 100)}% Unused</div>
+				<div className="UsedVaccines__Bar__Used" style={{height: `${usedP}%`}}>{usedP}% Used</div>
+				<div className="UsedVaccines__Bar__Unused" style={{height: `${unUsedP}%`}}>{unUsedP}% Unused</div>
 			</div>
 			<div className="UsedVaccines__Info col">
-		There are <span className="text-lg">{vaccinations.length}</span> vaccinations to be used. <span className="text-lg">{used}</span> of them have already been used and <span className="text-lg">{unUsed}</span> will be used in the future.`
+		There are <span className="text-highlight">{vaccinations.length}</span> orders for vaccinations all together. <span className="text-highlight">{used}</span> of them have already been used and <span className="text-highlight">{unUsed}</span> will be used in the future.
 			</div>
 		</div>
 		<div className="UsedVaccines row">

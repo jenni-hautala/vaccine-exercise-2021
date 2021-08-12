@@ -8,6 +8,7 @@ $secondary: #66eeff;
 
 body {
 	margin: 0;
+	line-height: 1.5;
 }
 .App {
 	font-family: 'Raleway', sans-serif;
@@ -47,10 +48,15 @@ body {
 		}
 	}
 	.col {
-		margin: auto;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: 30px;
 		max-width: 100%;
 		padding: 30px;
-		border: 1px solid $primary;
+		// border: 1px solid $primary;
+		@media (min-width: 992px) {
+			margin: auto;
+		}
 	}
 	// Typography
 	h1 {
@@ -80,10 +86,13 @@ body {
 	p {
 		margin: 0 0 10px;
 	}
-	.text-lg {
-		font-size: large;
+	.text-highlight {
+		font-size: x-large;
 		font-weight: 600;
 		color: $primary;
+		@media (min-width: 992px) {
+			font-size: xx-large;
+		}
 	}
 	// Other elements
 	.centered-box {
