@@ -4,49 +4,21 @@ import { useSelector } from 'react-redux';
 import Order from "./Order";
 
 function Orders({ date }) {
+	// Vaccination order data
+	const antiquaOrders = useSelector((state) => state.antiquaOrders);
+	const solarBuddhicaOrders = useSelector((state) => state.solarBuddhicaOrders);
 	const zerpfyOrders = useSelector((state) => state.zerpfyOrders);
+
+	// Filtering the orders
 	const today = new Date(date);
 	const filterByArrived = arr => arr.filter(({ arrived }) => new Date(arrived) < today);
+	const filteredAntiqua = (filterByArrived(antiquaOrders));
+	const filteredSolarBuddhica = (filterByArrived(solarBuddhicaOrders));
 	const filteredZerpfy = (filterByArrived(zerpfyOrders));
-	const ordersTotal = filteredZerpfy.length;
 
-	// Counting numbers
-	/**
-	 * Animate order numbers, count from 0 to total
-	 */
-	const counters = document.querySelectorAll('.js-OrderNum');
-	console.log(counters)
-	counters.forEach( counter => {
-		const animate = () => {
-			const value = +counter.getAttribute('data-orders');
-			const data = +counter.innerText;
-
-			const time = value / 250;
-
-			if(data < value) {
-				counter.innerText = Math.ceil(data + time);
-				setTimeout(animate, 1);
-			} else {
-				counter.innerText = value;
-			}
-		}
-   		animate();
-	});
-
-	const orders = [
-		{
-			name: "Zerpfy",
-			amount: 5000
-		},
-		{
-			name: "Antiqua",
-			amount: 500
-		},
-		{
-			name: "SolarBuddhica",
-			amount: 1500
-		}
-	]
+	// Data for the components
+	const ordersLists = [filteredAntiqua, filteredSolarBuddhica, filteredZerpfy]
+	const ordersTotal = filteredAntiqua.length + filteredSolarBuddhica.length + filteredZerpfy.length;
 
 	return(
 		<div className="Orders container">
@@ -56,11 +28,9 @@ function Orders({ date }) {
 				<h3 className="Orders__BlockTitle">vaccines ordered in total</h3>
 			</div>
 			<div className="Orders__Row">
-				{orders.map(order => {
-					return <Order
-						orderAmount={order.amount}
-						orderName={order.name}
-					/>
+				{ordersLists.map((orders, index) => {
+					const key = `OrderArray ${index}`;
+					return <Order key={key} orders={orders}/>
 				})}
 			</div>
 		</div>

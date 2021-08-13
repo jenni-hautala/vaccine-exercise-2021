@@ -16,7 +16,6 @@ function App() {
 	 */
 	 const dateHandler = (e) => {
 		setDate(e.target.value);
-		console.log(`pvm toimii viel: ${date}`);
 	}
 	/**
 	 * Return an ISO 8601 string without timezone
@@ -44,21 +43,6 @@ function App() {
 	const today = toISOStringLocal(new Date());
 	const [date, setDate] = useState(today);
 	const dispatch = useDispatch();
-	// const orderData = [
-	// 	{
-	// 		name: "Zerpfy",
-	// 		amount: 5000
-	// 	},
-	// 	{
-	// 		name: "Antiqua",
-	// 		amount: 500
-	// 	},
-	// 	{
-	// 		name: "SolarBuddhica",
-	// 		amount: 1500
-	// 	}
-	// ]
-
 
 	// UseEffect
 	useEffect(() => {
@@ -71,7 +55,7 @@ function App() {
 			<header>
 				<h1>Vaccination database</h1>
 				<div className="centered-box">
-					<label className="h2" htmlFor="chosenDay">Choose a day:</label>
+					<label className="h2" htmlFor="chosenDay">Choose a date:</label>
 					<input onChange={dateHandler} type="datetime-local" id="chosenDay"
 							name="chosenDay" value={date}
 							min="2021-01-01T00:00" max={today} />

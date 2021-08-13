@@ -7,11 +7,6 @@ export const getVaccinations = () => async (dispatch) => {
 	try {
 		const { data } = await api.fetchVaccinations();
 
-		console.log(data.vaccInfos)
-		console.log(data.antiquaOrders)
-		console.log(data.solarBuddhicaOrders)
-		console.log(data.zerpfyOrders)
-
 		dispatch({ type: 'FETCH_VACCINATIONS', payload: data.vaccInfos});
 		dispatch({ type: 'FETCH_ANTIQUA', payload: data.antiquaOrders});
 		dispatch({ type: 'FETCH_SOLARBUDDHICA', payload: data.solarBuddhicaOrders});

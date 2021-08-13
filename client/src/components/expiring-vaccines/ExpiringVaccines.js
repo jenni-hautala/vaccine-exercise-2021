@@ -1,8 +1,6 @@
 import React from "react";
 
 function ExpiringVaccines() {
-	// Functions
-
 	return(
 	<div className="ExpiringVaccines container">
 		<h2>Expiring vaccines</h2>
