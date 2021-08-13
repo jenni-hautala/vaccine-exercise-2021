@@ -9,12 +9,15 @@ import Orders from "./components/orders/Orders";
 import UsedVaccines from "./components/used-vaccines/UsedVaccines";
 
 function App() {
-	// Functions
+	/**
+	 * Functions
+	 */
+
 	/**
 	 * Handler for chosen date input
 	 * @param {*} e input value
 	 */
-	 const dateHandler = (e) => {
+	const dateHandler = (e) => {
 		setDate(e.target.value);
 	}
 	/**
@@ -22,7 +25,7 @@ function App() {
 	 * @param {*} date original date format
 	 * @returns {string} current timezone's date
 	 */
-	 const toISOStringLocal = (date) => {
+	const toISOStringLocal = (date) => {
 		function z(n){return (n<10?'0':'') + n}
 		return date.getFullYear() + '-' + z(date.getMonth()+1) + '-' +
 			z(date.getDate()) + 'T' + z(date.getHours()) + ':' +
@@ -39,15 +42,20 @@ function App() {
 		}
 	};
 
-	// Variables
+	/**
+	 * Variables
+	 */
 	const today = toISOStringLocal(new Date());
 	const [date, setDate] = useState(today);
 	const dispatch = useDispatch();
 
-	// UseEffect
+	/**
+	 * UseEffect
+	 */
 	useEffect(() => {
-		dispatch(getVaccinations());
+		dispatch(getVaccinations())
 	}, [dispatch]);
+
 
 
 	return (
@@ -62,6 +70,12 @@ function App() {
 				</div>
 			</header>
 			<main>
+				<div className="spinner-bg">
+					<div className="spinner">
+						<div className="double-bounce1"></div>
+						<div className="double-bounce2"></div>
+					</div>
+				</div>
 				<Orders
 					date={date}
 				/>

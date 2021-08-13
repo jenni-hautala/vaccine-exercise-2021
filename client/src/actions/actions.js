@@ -1,6 +1,13 @@
 import * as api from '../api';
 
 /**
+ * Hide loader
+ */
+	const hideLoader = () => {
+	document.querySelector('.spinner-bg').classList.add('hide');
+}
+
+/**
  * Action creators for vaccinations
  */
 export const getVaccinations = () => async (dispatch) => {
@@ -11,6 +18,7 @@ export const getVaccinations = () => async (dispatch) => {
 		dispatch({ type: 'FETCH_ANTIQUA', payload: data.antiquaOrders});
 		dispatch({ type: 'FETCH_SOLARBUDDHICA', payload: data.solarBuddhicaOrders});
 		dispatch({ type: 'FETCH_ZERPFY', payload: data.zerpfyOrders});
+		hideLoader();
 	} catch (error) {
 		console.log(error.message);
 	}

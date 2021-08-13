@@ -9,13 +9,17 @@ function UsedVaccines({ date }) {
 	const filteredVaccinations = (filterByExpiration(vaccinations));
 	const calcP = (a, b) => Math.floor(a / b * 100);
 
-	// Used vaccines
+	/**
+	 * Used vaccines
+	 */
 	const used = filteredVaccinations.length;
 	const usedP = calcP(used, vaccinations.length);
 	const unUsed = vaccinations.length - used;
 	const unUsedP = 100 - usedP;
 
-	// Vaccinated genders
+	/**
+	 * Vaccinated genders
+	 */
 	const filterGenders = (gender) => {
 		return (filteredVaccinations.filter(vacc => {
 			return vacc.gender === gender
