@@ -45,7 +45,10 @@ body {
 		}
 	}
 	main {
-		padding-top: 480px;
+		padding-top: 560px;
+		@media (min-width: 565px) {
+			padding-top: 480px;
+		}
 	}
 	footer {
 		width: 100%;
@@ -98,6 +101,7 @@ body {
 		}
 	}
 	h1 {
+		text-align: center;
 		font-size: 54px;
 		font-weight: 600;
 		margin-bottom: 2.5rem;
@@ -154,7 +158,7 @@ body {
 		align-items: center;
 		margin: auto;
 		padding: 1.5rem;
-		margin-bottom: 3rem;
+		margin-bottom: 2rem;
 		border: 2px solid $primary;
 		border-radius: 10px;
 	}

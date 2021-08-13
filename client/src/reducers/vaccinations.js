@@ -1,14 +1,14 @@
 /**
- * Reducers for vaccinations and vaccinates
+ * Reducer for vaccinations
  */
 
-const reducer = (vaccinations = [], action) => {
+const vaccReducer = (vaccinations = [], action) => {
 	switch (action.type) {
-		case 'FETCH_ALL':
+		case 'FETCH_VACCINATIONS':
 			return action.payload;
 		default:
 			return vaccinations;
 	}
 }
 
-export default reducer;
+export default vaccReducer;
