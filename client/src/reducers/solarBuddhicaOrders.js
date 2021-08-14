@@ -1,10 +1,13 @@
+import { FETCH_SOLARBUDDHICA } from '../constants/actionTypes';
+
+
 /**
  * Reducer for SolarBuddhica orders
  */
 
 const solarBuddhicaReducer = (solarBuddhicaOrders = [], action) => {
 	switch (action.type) {
-		case 'FETCH_SOLARBUDDHICA':
+		case FETCH_SOLARBUDDHICA:
 			return action.payload;
 		default:
 			return solarBuddhicaOrders;
