@@ -10,6 +10,10 @@ Run ```npm i && npm start``` for both client and server side to start the app.
 
 Applicaton will run on port: 3000, http://localhost:3000/
 
+## Tips
+
+- Run ```npm i``` and ```npm start``` separately if you're using PowerShell
+- The application allows you to choose a date until the current day but try choosing dates in the beginning of the year. The data remains same after 12/04/2021
 
 ## Possible improvements for the future
 
